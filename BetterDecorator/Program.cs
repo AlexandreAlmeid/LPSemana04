@@ -2,8 +2,18 @@
 
 namespace BetterDecorator
 {
+    /// <summary>
+    /// Classe que implementa o programa "Better Decorator".
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// Função que recebe e formata uma string adicionando um determinado número de caracteres antes e depois desta.
+        /// </summary>
+        /// <param name="s">String a ser formatada.</param>
+        /// <param name="dec">Caracter a ser introduzido.</param>
+        /// <param name="num">Número de vezes que o caracter aparece antes e depois da string.</param>
+        /// <returns>String formatada com o caracter definido.</returns>
         private static string Decor( string s , char dec , int num)
         {
             string aux = "";
@@ -13,6 +23,10 @@ namespace BetterDecorator
             }
             return $"{aux} {s} {aux}";
         }
+        /// <summary>
+        /// Função que recebe os parâmetros de entrada e chama a função "Decor" com estes.
+        /// </summary>
+        /// <param name="args">Parâmetros de entrada do programa.</param>
         static void Main(string[] args)
         {
             string s = args[0];
