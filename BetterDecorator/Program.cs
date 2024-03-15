@@ -7,6 +7,8 @@ namespace BetterDecorator
     /// </summary>
     class Program
     {
+
+
         /// <summary>
         /// Função que recebe e formata uma string adicionando um determinado número de caracteres antes e depois desta.
         /// </summary>
@@ -23,16 +25,30 @@ namespace BetterDecorator
             }
             return $"{aux} {s} {aux}";
         }
+        
+        /// <summary>
+        /// Overload da função "Decor" para quando o utilizador não define argumentos.
+        /// </summary>
+        /// <returns>String indica que o utilizador não especificou os argumentos.</returns>
+        private static string Decor() => Decor("User did not specify args!", '=', 3);
+
         /// <summary>
         /// Função que recebe os parâmetros de entrada e chama a função "Decor" com estes.
         /// </summary>
         /// <param name="args">Parâmetros de entrada do programa.</param>
         static void Main(string[] args)
         {
-            string s = args[0];
-            char dec = args[1][0];
-            int num = int.Parse(args[2]);
-            Console.WriteLine(Decor(s, dec, num));
+            if(args.Length == 0)
+            {
+                Console.WriteLine(Decor());
+            }
+            else
+            {
+                string s = args[0];
+                char dec = args[1][0];
+                int num = int.Parse(args[2]);
+                Console.WriteLine(Decor(s, dec, num));
+            }
         }
     }
 }
